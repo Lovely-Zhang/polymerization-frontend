@@ -103,7 +103,7 @@ const loadAllData = (params: any) => {
  * @param params
  */
 const loadData = (params: any) => {
-  const { type } = params;
+  const { type = "post" } = params;
   if (!type) {
     message.error("类别为空");
     return;

@@ -23,10 +23,11 @@ instance.interceptors.response.use(
     const data = response.data;
     if (data.code === 0) {
       return data.data;
-    } else {
-      alert("数据错误");
-      return "数据错误";
     }
+    console.error("request error", data);
+    return response.data;
+    // alert("数据错误");
+    // return "数据错误";
   },
   function (error) {
     // 超出 2xx 范围的状态码都会触发该函数。
